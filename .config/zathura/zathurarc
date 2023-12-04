@@ -1,0 +1,10 @@
+include colors/nord
+
+# GENERAL SETTINGS
+# ----------------
+set window-title-basename true
+set statusbar-home-tilde  true
+set recolorkeephue        true
+set recolor-reverse-video true
+set recolor               true
+set selection-clipboard   clipboard

@@ -1,0 +1,228 @@
+include ~/.config/i3/colors/nord
+
+# border & title
+for_window [class="^.*"] border pixel 1, title_format "<b> %class >> %title </b>"
+
+# gaps
+gaps inner 8
+gaps outer 0
+
+# font
+font pango:FantasqueSansM Nerd Font 11
+
+# mod key used for most binds
+# Mod1 = Alt
+# Mod4 = Super
+set $Mod Mod4
+
+# direction keys
+set $up k
+set $down j
+set $left h
+set $right l
+
+###############     Autostart      ##################
+
+# run with reload
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+exec_always --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/
+
+# run once
+exec --no-startup-id blueman-applet
+#exec --no-startup-id copyq
+exec --no-startup-id xfce4-power-manager
+exec --no-startup-id nm-applet
+exec --no-startup-id pasystray --key-grabbing
+exec --no-startup-id picom -b
+exec --no-startup-id xscreensaver
+exec --no-startup-id firewalld-applet
+
+#############         Bindings           ##################
+
+# launchers
+bindsym $Mod+d exec --no-startup-id rofi -show drun
+bindsym $Mod+Shift+d exec --no-startup-id rofi -show run
+
+# kill focused window
+bindsym $Mod+Shift+q kill
+
+# display
+bindsym $Mod+p exec --no-startup-id lxrandr
+bindsym $Mod+Escape exec --no-startup-id xscreensaver-command -lock
+
+# core
+bindsym $Mod+w             exec --no-startup-id firefox
+bindsym $Mod+f             exec --no-startup-id thunar
+bindsym $Mod+t             exec --no-startup-id kitty
+bindsym $Mod+Return        exec --no-startup-id kitty
+bindsym $Mod+a             exec --no-startup-id copyq menu
+bindsym XF86Calculator     exec --no-startup-id galculator
+
+# logout script
+bindsym $Mod+x             exec --no-startup-id rofi -show p -modi p:~/.local/bin/rofi-power-menu 
+bindsym $Mod+Shift+e       exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+# Screenshot
+bindsym Print              exec --no-startup-id xfce4-screenshooter -r
+bindsym Shift+Print        exec --no-startup-id xfce4-screenshooter
+
+# audio
+bindsym XF86AudioPlay      exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext      exec --no-startup-id playerctl next
+bindsym XF86AudioPrev      exec --no-startup-id playerctl previous
+bindsym XF86AudioStop      exec --no-startup-id playerctl stop
+
+###########          Workspace Bindings          ###############
+
+# switch to workspace
+bindsym $Mod+1 workspace 1
+bindsym $Mod+2 workspace 2
+bindsym $Mod+3 workspace 3
+bindsym $Mod+4 workspace 4
+bindsym $Mod+5 workspace 5
+bindsym $Mod+6 workspace 6
+bindsym $Mod+7 workspace 7
+bindsym $Mod+8 workspace 8
+
+# switch to workspace - numpad alternatives
+bindsym $Mod+Mod2+KP_1 workspace 1
+bindsym $Mod+Mod2+KP_2 workspace 2
+bindsym $Mod+Mod2+KP_3 workspace 3
+bindsym $Mod+Mod2+KP_4 workspace 4
+bindsym $Mod+Mod2+KP_5 workspace 5
+bindsym $Mod+Mod2+KP_6 workspace 6
+bindsym $Mod+Mod2+KP_7 workspace 7
+bindsym $Mod+Mod2+KP_8 workspace 8
+
+# switch to next or previous workspace
+bindsym $Mod+Control+Left  workspace prev
+bindsym $Mod+Control+Right workspace next
+
+# move focused container to workspace
+bindsym $Mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $Mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $Mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $Mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $Mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $Mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $Mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $Mod+Shift+8 move container to workspace 8; workspace 8
+
+# move focused container to workspace - numpad alternatives
+bindsym $Mod+Shift+Mod2+KP_End   move container to workspace 1; workspace 1
+bindsym $Mod+Shift+Mod2+KP_Down  move container to workspace 2; workspace 2
+bindsym $Mod+Shift+Mod2+KP_Next  move container to workspace 3; workspace 3
+bindsym $Mod+Shift+Mod2+KP_Left  move container to workspace 4; workspace 4
+bindsym $Mod+Shift+Mod2+KP_Begin move container to workspace 5; workspace 5
+bindsym $Mod+Shift+Mod2+KP_Right move container to workspace 6; workspace 7
+bindsym $Mod+Shift+Mod2+KP_Home  move container to workspace 7; workspace 7
+bindsym $Mod+Shift+Mod2+KP_Up    move container to workspace 8; workspace 8
+
+# show windows
+bindsym $Mod+Tab exec rofi -show window
+
+##############     Reload configs           ################
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $Mod+Shift+r restart
+
+# reload the configuration file
+bindsym $Mod+r reload
+
+############      Container/Window control  ############
+
+# Scratchpad, Floating
+bindsym $Mod+space floating toggle
+floating_modifier  $Mod
+
+bindsym $Mod+z move scratchpad
+bindsym $Mod+Shift+z scratchpad show
+
+# change focus
+bindsym $Mod+$left  focus left
+bindsym $Mod+$down  focus down
+bindsym $Mod+$up    focus up
+bindsym $Mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $Mod+Left  focus left
+bindsym $Mod+Down  focus down
+bindsym $Mod+Up    focus up
+bindsym $Mod+Right focus right
+
+bindsym $Mod+Shift+c focus parent
+bindsym $Mod+c focus child
+
+# move focused window
+bindsym $Mod+Shift+$left  move left  10px
+bindsym $Mod+Shift+$down  move down  10px
+bindsym $Mod+Shift+$up    move up    10px
+bindsym $Mod+Shift+$right move right 10px
+
+# alternatively, you can use the cursor keys:
+bindsym $Mod+Shift+Up    move up    10px
+bindsym $Mod+Shift+Down  move down  10px
+bindsym $Mod+Shift+Left  move left  10px
+bindsym $Mod+Shift+Right move right 10px
+
+# Size
+bindsym $Mod+Mod1+Up    resize shrink height 10 px or 1 ppt
+bindsym $Mod+Mod1+Down  resize grow   height 10 px or 1 ppt
+bindsym $Mod+Mod1+Left  resize shrink width  10 px or 1 ppt
+bindsym $Mod+Mod1+Right resize grow   width  10 px or 1 ppt
+
+# layout toggle, keycode 20 is -
+bindcode $Mod+Mod1+20 layout toggle tabbed split
+bindcode $Mod+20 layout toggle splitv splith
+
+# switch to workspace with urgent window
+#for_window [urgent="latest"] focus
+#focus_on_window_activation   focus
+
+# container layout
+bindsym $Mod+Shift+v split h
+bindsym $Mod+v split v
+bindsym $Mod+Shift+t layout tabbed
+bindsym $Mod+Shift+s layout stacking
+bindsym $Mod+Control+v layout toggle split
+
+default_orientation horizontal
+
+###############      Border & Gaps     ###############
+
+new_window normal
+new_float  normal
+
+hide_edge_borders both
+
+bindsym $Mod+shift+b border toggle
+
+# changing border style
+bindsym $Mod+b border normal
+bindsym $Mod+m border 1pixel
+bindsym $Mod+n border none
+
+# change gaps
+bindsym $Mod+Control+Shift+i     gaps inner current plus  5
+bindsym $Mod+Control+i           gaps inner current minus 5
+bindsym $Mod+Control+Shift+o     gaps outer current plus  5
+bindsym $Mod+Control+o           gaps outer current minus 5
+bindsym $Mod+Shift+i             gaps inner all     plus  5
+bindsym $Mod+i                   gaps inner all     minus 5
+bindsym $Mod+Shift+o             gaps outer all     plus  5
+bindsym $Mod+o                   gaps outer all     minus 5
+
+############    application settings   ############
+
+# assign applications to specific workspace
+assign [class="(?i)(?:virt-manager)"]  → 1
+assign [class="(?i)(?:kitty)"]   → 2
+assign [class="(?i)(?:firefox|chromium|brave)"] → 3
+assign [class="(?i)(?:calibre|zathura)"] → 4
+
+# focus, floating, & sticky
+#for_window [class="(?i)(?:qt5ct|pinentry|firefox|geany|thunar)"] focus
+for_window [title="(?i)(?:copying|deleting|moving|Android Emulator|galculator)"] floating enable
+for_window [window_role="(?i)(?:pop-up|setup)"]      floating enable
+
+popup_during_fullscreen smart
