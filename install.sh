@@ -3,13 +3,13 @@
 echo 'Installing dependencies'
 
 if type 'pacman' > /dev/null 2>&1; then
-  sudo pacman -S fish kitty ranger bat pasystray pavucontrol playerctl picom xscreensaver rofi polybar i3-wm arandr lxrandr lxappearance zathura zathura-pdf-mupdf feh nitrogen neofetch neovim htop jq galculator arc-gtk-theme papirus-icon-theme nerd-fonts
+  sudo pacman -S fish kitty ranger bat pasystray pavucontrol playerctl picom xscreensaver rofi jgmenu lxmenu-data polybar i3-wm arandr lxrandr lxappearance zathura zathura-pdf-mupdf feh nitrogen neofetch neovim htop jq galculator arc-gtk-theme papirus-icon-theme nerd-fonts ripgrep
 fi
 if type 'zypper' > /dev/null 2>&1; then
-  sudo zypper in fish kitty ranger bat pasystray pavucontrol playerctl picom xscreensaver xscreensaver-data xscreensaver-data-extra rofi polybar i3 arandr lxrandr lxappearance zathura feh nitrogen neofetch neovim htop jq metatheme-arc-common papirus-icon-theme
+  sudo zypper in fish kitty ranger bat pasystray pavucontrol playerctl picom xscreensaver xscreensaver-data xscreensaver-data-extra rofi jgmenu lxmenu-data polybar i3 arandr lxrandr lxappearance zathura feh nitrogen neofetch neovim htop jq metatheme-arc-common papirus-icon-theme ripgrep
 fi
 if type 'apt' > /dev/null 2>&1; then
-  sudo apt install fish kitty ranger bat pasystray pavucontrol playerctl picom xscreensaver xscreensaver-data-extra xscreensaver-gl-extra rofi polybar i3-wm suckless-tools arandr lxrandr lxappearance zathura feh nitrogen neofetch htop jq galculator arc-theme papirus-icon-theme
+  sudo apt install fish kitty ranger bat pasystray pavucontrol playerctl picom xscreensaver xscreensaver-data-extra xscreensaver-gl-extra rofi jgmenu lxmenu-data polybar i3-wm suckless-tools arandr lxrandr lxappearance zathura feh nitrogen neofetch htop jq galculator arc-theme papirus-icon-theme ripgrep
   sudo dpkg -i system/nvim-linux64.deb
 fi
 
@@ -23,7 +23,7 @@ if [ $install_nf = 'y' ]; then
   echo 'Installing nerd-fonts'
   bash .ignore/nerd-fonts/install.sh
 else
-  echo 'Font configured by default is Iosevka Nerd Font'
+  echo 'Font configured by default is FantasqueSansM Nerd Font'
 fi
 
 echo 'Copying dotfiles'

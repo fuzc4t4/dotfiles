@@ -26,6 +26,7 @@ set $right l
 # run with reload
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id feh --bg-fill --randomize /usr/share/backgrounds/
+exec_always --no-startup-id ~/.config/i3/scripts/jgmenu.sh
 
 # run once
 exec --no-startup-id blueman-applet
