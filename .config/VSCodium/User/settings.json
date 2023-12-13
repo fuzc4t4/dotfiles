@@ -1,0 +1,12 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Nord",
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.fontFamily": "'FantasqueSansM Nerd Font', 'FiraCode Nerd Font', 'FiraCode', 'Droid Sans Mono', 'monospace', monospace",
+  "editor.fontSize": 18,
+  "editor.renderWhitespace": "all",
+  "editor.fontLigatures": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  }
+}

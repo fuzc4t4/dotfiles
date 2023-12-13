@@ -1,0 +1,10 @@
+arcticicestudio.nord-visual-studio-code
+esbenp.prettier-vscode
+ms-python.black-formatter
+ms-python.flake8
+ms-python.python
+mtxr.sqltools
+mtxr.sqltools-driver-mysql
+mtxr.sqltools-driver-pg
+PKief.material-icon-theme
+vscodevim.vim
