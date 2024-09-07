@@ -36,7 +36,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pasystray --key-grabbing
 exec --no-startup-id picom -b
 exec --no-startup-id xscreensaver
-exec --no-startup-id firewalld-applet
+#exec --no-startup-id firewalld-applet
 
 #############         Bindings           ##################
 
