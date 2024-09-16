@@ -1,6 +1,7 @@
 ^sep()
 Exit,^checkout(exit),system-shutdown
 ^tag(exit)
+Lock Screen,xscreensaver-command --lock,system-lock-screen
 Suspend,systemctl -i suspend,system-log-out
 Reboot,systemctl -i reboot,system-reboot
 Poweroff,systemctl -i poweroff,system-shutdown

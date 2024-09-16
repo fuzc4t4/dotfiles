@@ -185,7 +185,8 @@ bindsym $Mod+Shift+v split h
 bindsym $Mod+v split v
 bindsym $Mod+Shift+t layout tabbed
 bindsym $Mod+Shift+s layout stacking
-bindsym $Mod+Control+v layout toggle split
+bindsym $Mod+Shift+y layout toggle split
+bindsym $Mod+Shift+f fullscreen toggle
 
 default_orientation horizontal
 

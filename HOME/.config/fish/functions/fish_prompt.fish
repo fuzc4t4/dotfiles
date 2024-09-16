@@ -67,6 +67,11 @@ function fish_prompt --description 'Write out the prompt'
     # Starting a new line here
     echo ""
 
+    # Check for background jobs
+    if test (jobs | count) -gt 0
+        printf "%s " (set_color cyan)'+'
+    end
+
     # Color the prompt differently when we're root
     set -l suffix '❯'
     if functions -q fish_is_root_user; and fish_is_root_user
@@ -85,4 +90,3 @@ function fish_prompt --description 'Write out the prompt'
     # Print the prompt suffix and normal text
     echo -s $status_color $suffix ' ' $normal
 end
-

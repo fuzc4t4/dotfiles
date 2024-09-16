@@ -31,11 +31,11 @@ install_dependencies() {
 
 # Function to install nerd fonts
 install_nerd_fonts() {
-  echo 'This will clone github.com/ryanoasis/nerd-fonts to .ignore/ in this directory and can take a while'
-  git clone --depth=1 https://github.com/ryanoasis/nerd-fonts.git .ignore/nerd-fonts/
-  echo 'Installing nerd-fonts'
-  bash .ignore/nerd-fonts/install.sh
-  echo 'Font configured by default is FantasqueSansM Nerd Font'
+  echo 'Installing FantasqueSansM nerd-font'
+  mkdir -p .ignore
+  curl --output-dir .ignore -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FantasqueSansMono.tar.xz
+  mkdir -p ~/.local/share/fonts/NerdFonts
+  tar -xf ./.ignore/FantasqueSansMono.tar.xz -C ~/.local/share/fonts/NerdFonts
 }
 
 # Function to install dotfiles
