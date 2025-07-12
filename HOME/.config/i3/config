@@ -8,7 +8,7 @@ gaps inner 8
 gaps outer 0
 
 # font
-font pango:FantasqueSansM Nerd Font 11
+font pango:Maple Mono NF 11
 
 # mod key used for most binds
 # Mod1 = Alt

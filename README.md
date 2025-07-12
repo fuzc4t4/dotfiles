@@ -2,7 +2,7 @@
 
 Dotfiles for i3 while keeping xfce4 installed.  
 By default this script will setup your hostname as transient and randomize your mac address.
-LazyVim can be installed via install.sh but VsCodium config is given as well.
+LazyVim and Spacemacs can be installed via install.sh but VsCodium config is given as well.
 Works for Arch, openSUSE Tumbleweed, Debian Testing and Fedora.
 
 ## Usage
@@ -11,9 +11,9 @@ Review and run install.sh
 ## To-Do:
 - [x] Script to auto install dependencies based on diffenrent distros.
 - [ ] Support for more color schemes and a script to change them, currently only nord is available.
-- [ ] Script to change the font configured, currently FantasqueSansM Nerd Font is configured.
+- [ ] Script to change the font configured, currently Maple font is configured.
 - [x] GTK config files.
-- [ ] Xfce4 dotfiles.
+- [ ] Xfce4 dotfiles.(Don't really care)
 
 ## Some credits:
 * [github.com/polybar/polybar-scripts](https://github.com/polybar/polybar-scripts)

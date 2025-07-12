@@ -8,7 +8,7 @@
  */
 
 configuration {
-  font: "FantasqueSansM Nerd Font 14";
+  font: "Maple Mono NF 14";
 
   drun {
     display-name: "[^.^]";
